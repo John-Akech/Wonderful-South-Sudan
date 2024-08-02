@@ -31,8 +31,8 @@ Steps:
 
 Clone the Repository:
 
-git clone https://github.com/John-Akech/wonderful-south-Sudan.git
-cd wonderful-south-Sudan
+git clone git@github.com:John-Akech/Wonderful-South-Sudan.git
+cd Wonderful-South-Sudan
 
 Create and Activate a Virtual Environment:
 
