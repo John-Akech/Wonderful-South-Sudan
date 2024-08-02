@@ -1,0 +1,228 @@
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-image: url(../images/The\ Nile.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+header {
+  background-color: #004d00; /* Dark green for a professional look */
+  color: #ffffff;
+  padding: 1rem 0;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav h1 {
+  margin: 0;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin: 2rem;
+}
+
+nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+.hero {
+  color: #006400;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+}
+
+.btn {
+  background-color: #006400; /* Slightly lighter green */
+  color: #ffffff;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background-color: #004d00; /* Darker green on hover */
+}
+
+.attractions-container {
+  display: flex; /* Use flexbox for layout */
+  flex-wrap: wrap; /* Allow wrapping of columns */
+  gap: 1rem; /* Space between the columns and rows */
+  justify-content: center; /* Center the columns horizontally */
+}
+
+.attractions-container article {
+  flex: 1 1 calc(30% - 1rem); /* Adjust width of each article */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  border: 1px solid #ddd; /* Light border around each article */
+  border-radius: 8px; /* Rounded corners for a softer look */
+  background-color: #f9f9f9; /* Light background color */
+  overflow: hidden; /* Ensure content does not overflow */
+  text-align: center; /* Center text within each article */
+  padding: 1rem; /* Padding inside the article */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for hover effects */
+  vertical-align: top;
+}
+
+.attractions-container article img {
+  width: 100%; /* Make the image fill the width of the article */
+  height: 200px; /* Set a fixed height for consistency */
+  object-fit: cover; /* Ensure the image covers the area without distortion */
+  display: block; /* Remove any extra space below the image */
+  margin-bottom: 1rem; /* Space between image and text */
+}
+
+.attractions-container article h3 {
+  font-size: 1.2rem; /* Font size for the image heading */
+  margin: 0.5rem 0; /* Margin around the heading */
+  color: #444; /* Dark color for better readability */
+}
+
+.attractions-container article p {
+  margin: 0.5rem 0; /* Margin around the description paragraph */
+  font-size: 0.9rem; /* Slightly smaller font size for description */
+  color: #666; /* Lighter color for the description text */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .attractions-container article {
+    flex: 1 1 calc(50% - 1rem); /* Two columns on medium screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .attractions-container article {
+    flex: 1 1 100%; /* One column on small screens */
+  }
+}
+
+.map {
+  margin: 2rem 0;
+}
+
+#biodiversity-map {
+  width: 100%;
+  height: 400px; /* Adjust height as needed */
+  background-color: #f4f4f4; /* Light grey background */
+}
+
+/* Footer Styles */
+footer {
+  background-color: #004d00;
+  color: #ffffff;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer ul li {
+  display: inline;
+  margin-left: 1rem;
+}
+
+footer ul li a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+footer ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Page Specific Styles */
+main {
+  padding: 2rem 0;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  margin-top: 1rem;
+}
+
+form input, form select {
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+form button {
+  margin-top: 1rem;
+  background-color: #006400;
+  color: #ffffff;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 5px;
+}
+
+form button:hover {
+  background-color: #004d00;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav ul li {
+    margin: 0.5rem 0;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+}
