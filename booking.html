@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking - Wonderful South Sudan</title>
+    <link rel="stylesheet" href="./dev/elevate/static/styles/styles.css">
+    <script src="./dev/static/scripts/script.js" defer></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <!-- <h1>Wonderful South Sudan</h1> -->
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="attractions.html">Attractions</a></li>
+                    <li><a href="conservation.html">Conservation</a></li>
+                    <li><a href="booking.html">Booking</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="register.html">Register</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="booking">
+            <div class="container">
+                <h2>Book Your Tour</h2>
+                <form action="#" method="POST">
+                    <label for="tour">Select Tour:</label>
+                    <select id="tour" name="tour">
+                        <option value="tour1">National Parks</option>
+                        <option value="tour2">Mountains</option>
+                        <option value="tour1">Rivers(s)</option>
+                        <option value="tour2">Cultures</option>
+                        <!-- Add more tour options -->
+                    </select>
+                    <label for="date">Date:</label>
+                    <input type="date" id="date" name="date">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email">
+                    <button type="submit">Book Now</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Wonderful South Sudan. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
