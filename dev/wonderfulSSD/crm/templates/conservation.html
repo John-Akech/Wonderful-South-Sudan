@@ -1,0 +1,157 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conservation Projects - Wonderful South Sudan</title>
+    <link rel="stylesheet" href="{% static 'styles/styles.css' %}">
+    <script src="{% static 'scripts/script.js' %}" defer></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js" defer></script>
+    <style>
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #f7ba5b;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #e0a55c;
+        }
+
+        /* Ensure button style consistency */
+        .btn-primary {
+            background-color: #f7ba5b;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <!-- <h1>Wonderful South Sudan</h1> -->
+                <ul>
+                    <li><a href="{% url 'crm:home' %}">Home</a></li>
+                    <li><a href="{% url 'crm:attractions' %}">Attractions</a></li>
+                    <li><a href="{% url 'crm:conservation' %}">Conservation</a></li>
+                    <li><a href="{% url 'crm:register' %}">Register</a></li>
+                    <li><a href="{% url 'crm:booking' %}" class="btn">Booking</a></li>
+                    {% comment %} <li><a href="{% url 'login' %}">Login</a></li> {% endcomment %}
+                    
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>Discover the Beauty of South Sudan</h2>
+                <p>Explore the diverse conservation sites and actively contribute to ongoing preservation efforts.</p>
+                <h2>Conservation Sites</h2>
+            </div>
+            <section class="attractions">
+                <h3>National Parks</h3>
+                <div class="attractions-container">
+                    <article>
+                        <img src="{% static 'images/Boma-National-Park.jpg' %}" alt="Boma National Park">
+                        <h3>Boma National Park</h3>
+                        <p>Boma National Park is a protected area in eastern South Sudan near the Ethiopian border. It was established in 1977 and covers 22,800 km² of grasslands and floodplains. The park is in the Somali-Maasai and Sudano-Guinean biomes.</p>
+                    </article>
+                    <article>
+                        <img src="{% static 'images/Bandingilo-National-Park (1).jpg' %}" alt="Bandingilo National Park">
+                        <h3>Bandingilo National Park</h3>
+                        <p>The Bandingilo National Park, sometimes spelled Badingilo, is a national park located in South Sudan's Equatoria region. The park covered the erstwhile states of Central Equatoria and Eastern Equatoria.</p>
+                    </article>
+                    <article>
+                        <img src="{% static 'images/national-park-animals.jpg' %}" alt="Nimule National Park">
+                        <h3>Nimule National Park</h3>
+                        <p>The Nimule National Park is a national park in South Sudan. It was established in 1954, and extends over an area of 410 km², along the border with Uganda.</p>
+                    </article>
+                    <article>
+                        <img src="{% static 'images/Lantoto-National-Park.jpg' %}" alt="Lantoto National Park">
+                        <h3>Lantoto National Park</h3>
+                        <p>Lantoto National Park is a national park in South Sudan, established in 1954, and extends over an area of 410 km², along the border with Uganda.</p>
+                    </article>
+                    <article>
+                        <img src="{% static 'images/Shambe-National-Park.jpg' %}" alt="Shambe National Park">
+                        <h3>Shambe National Park</h3>
+                        <p>Shambe National Park is located on the west bank of the White Nile. It was established in 1985 and extends over an area of 620 km², in the remote area of Adior payam and extending southward to Kenisa in Malek payam near Ramciel South Sudan.</p>
+                    </article>
+                    <article>
+                        <img src="{% static 'images/southern natioanl park.jpg' %}" alt="Southern National Park">
+                        <h3>Southern National Park</h3>
+                        <p>The Southern National Park is a national park in South Sudan, established in 1939. This site has an area of 23,000 km².</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="attractions">
+                <h3>Mountains/Hills</h3>
+                <div class="attractions-container">
+                    <article>
+                        <img src="{% static 'images/Imatong mountain.jpeg' %}" alt="Imatong Mountain">
+                        <h3>Imatong Mountain</h3>
+                        <p>The Imatong Mountains are mainly located in Eastern Equatoria in southeastern South Sudan, and extend into the Northern Region of Uganda. Mount Kinyeti is the highest mountain of the range at 3,187 metres, and the highest point of South Sudan.</p>
+                    </article>
+                    <article>
+                        <img src="{% static 'images/Boma mountain.jpeg' %}" alt="Boma Mountain">
+                        <h3>Boma Mountain</h3>
+                        <p>Boma Mountain is located in southeastern South Sudan, near the border with Ethiopia. It is in the Boma National Park I.</p>
+                    </article>
+                    <article>
+                        <img src="{% static 'images/Jebel Kujur.jpeg' %}" alt="Jebel Kujur">
+                        <h3>Jebel Kujur</h3>
+                        <p>Jebel Kujur is home to a few families who cultivate the land on the mountain side and also work as stone crushers manually.</p>
+                    </article>
+                    {% comment %} <article>
+                        <img src="{% static 'images/Boya hills.jpeg' %}" alt="Boya Hills">
+                        <h3>Boya Hills</h3>
+                        <p>Boya Hills is a mountain range located in Eastern Equatoria, South Sudan.</p>
+                    </article> {% endcomment %}
+                </div>
+            </section>
+
+            <section class="attractions">
+                <h3>Rivers</h3>
+                <div class="attractions-container">
+                    <article>
+                        <img src="{% static 'images/The Nile.jpg' %}" alt="Nile River">
+                        <h3>Nile River</h3>
+                        <p>The White Nile is a river in Africa, the minor of the two main tributaries of the Nile, with the larger being the Blue Nile. The name "White" comes from the clay sediment carried in the water that changes the water to a pale color.</p>
+                    </article>
+                    <article>
+                        <img src="{% static 'images/Agwei river.jpeg' %}" alt="Agwei River">
+                        <h3>Agwei River</h3>
+                        <p>The Agwei River is a tributary of the Pibor River that flows through eastern South Sudan.</p>
+                    </article>
+                    <article>
+                        <img src="{% static 'images/Akobo river.jpeg' %}" alt="Akobo River">
+                        <h3>Akobo River</h3>
+                        <p>The Akobo River is located on the border between South Sudan and Ethiopia. From its source in the Ethiopian Highlands near Mizan Teferi, it flows west.</p>
+                    </article>
+                    {% comment %} <article>
+                        <img src="{% static 'images/Lotilla river.jpeg' %}" alt="Lotilla River">
+                        <h3>Lotilla River</h3>
+                        <p>The Lotilla River rises in marshes on the borders of the erstwhile Eastern Equatoria and Jonglei states and flows north to join the Pibor River near Pibor, at a junction with the Kangen River. The marshes are fed by the Medikiret River, which has its origins in marshes further south.</p>
+                    </article> {% endcomment %}
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="container">
+                <p>&copy; 2024 Wonderful South Sudan. All rights reserved.</p>
+            </div>
+        </footer>
+    </body>
+</html>

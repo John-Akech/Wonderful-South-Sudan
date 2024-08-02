@@ -1,0 +1,111 @@
+/* Reset margin and padding */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* Flexbox container to center content */
+.container {
+  display: flex;
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  height: 100vh; /* Full viewport height */
+  background-image: url('../images/Shambe-National-Park.jpg'); /* Adjust path as needed */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* Styling for user card */
+.user_card {
+  width: 350px;
+  background: #004d00;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 5px;
+  align-items: center;
+  text-align: center;
+}
+
+/* Title styling */
+#form-title {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Form container styling */
+.form_container {
+  margin-top: 20px;
+}
+
+/* Button styling */
+input[type="submit"] {
+  width: 100%;
+  background: white !important;
+  color: #004d00 !important;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input[type="submit"]:focus {
+  box-shadow: none !important;
+  outline: 0 !important;
+}
+
+/* Input group styling */
+.input-group-text {
+  background: #f7ba5b !important;
+  color: white !important;
+  border: 0 !important;
+  border-radius: 0.25rem 0 0 0.25rem !important;
+}
+
+.input_user,
+.input_pass:focus {
+  box-shadow: none !important;
+  outline: 0 !important;
+}
+
+/* Alert message styling */
+.alert {
+  margin-bottom: 20px;
+}
+
+.alert-message {
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+  background-color: #4CAF50; /* Green background for success messages */
+}
+
+.alert-message.error {
+  background-color: #f44336; /* Red background for error messages */
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #004d00;
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.btn-primary:hover {
+  background-color: #004d00;
+  color: white;
+}

@@ -1,0 +1,124 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wonderful South Sudan</title>
+    <link rel="stylesheet" href="{% static 'styles/styles.css' %}">
+    <script src="{% static 'js/script.js' %}" defer></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script> <!-- Removed defer attribute -->
+    <style>
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #f7ba5b;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #e0a55c;
+        }
+
+        .btn-primary {
+            background-color: #f7ba5b;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <ul>
+                    <li><a href="{% url 'crm:home' %}">Home</a></li>
+                    <li><a href="{% url 'crm:attractions' %}">Attractions</a></li>
+                    <li><a href="{% url 'crm:conservation' %}">Conservation</a></li>
+                    {% comment %} <li><a href="{% url 'crm:login' %}">Login</a></li> {% endcomment %}
+                    <li><a href="{% url 'crm:register' %}">Register</a></li>
+                    <li><a href="{% url 'crm:booking' %}" class="btn">Booking</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>Discover the Beauty of South Sudan</h2>
+                <p>Explore the diverse attractions and contribute to conservation efforts.</p>
+                <h2>Top Attractions</h2>
+            </div>
+            <section class="attractions">
+                <h3>National Parks</h3>
+                <div class="attractions-container">
+                    <article>
+                        <img src="{% static 'images/Boma-National-Park.jpg' %}" alt="Boma National Park">
+                        <h3>Boma National Park</h3>
+                        <p>Boma National Park is a protected area in eastern South Sudan near the Ethiopian border. It was established in 1977 and covers 22,800 km² of grasslands and floodplains. The park is in the Somali-Maasai and Sudano-Guinean biomes.</p>
+                    </article>
+                    <article>
+                        <img src="{% static 'images/Bandingilo-National-Park (1).jpg' %}" alt="Bandingilo National Park">
+                        <h3>Bandingilo National Park</h3>
+                        <p>The Bandingilo National Park, sometimes spelled Badingilo, is a national park located in South Sudan's Equatoria region. The park covered the erstwhile states of Central Equatoria and Eastern Equatoria.</p>
+                    </article>
+                    <article>
+                        <img src="{% static 'images/national-park-animals.jpg' %}" alt="Nimule National Park">
+                        <h3>Nimule National Park</h3>
+                        <p>The Nimule National Park is a national park in South Sudan. It was established in 1954, and extends over an area of 410 km², along the border with Uganda.</p>
+                    </article>
+                    <article>
+                        <img src="{% static 'images/Lantoto-National-Park.jpg' %}" alt="Lantoto National Park">
+                        <h3>Lantoto National Park</h3>
+                        <p>The Nimule National Park is a national park in South Sudan. It was established in 1954, and extends over an area of 410 km², along the border with Uganda.</p>
+                    </article>
+                    <article>
+                        <img src="{% static 'images/Shambe-National-Park.jpg' %}" alt="Shambe National Park">
+                        <h3>Shambe National Park</h3>
+                        <p>The Shambe National Park is a national park in South Sudan, located on the west bank of the White Nile. It was established in 1985 and extends over an area of 620 km². The national game park is in the remote area of Adior payam and extend southward to Kenisa in Malek payam near Ramciel South Sudan.</p>
+                    </article>
+                    <article>
+                        <img src="{% static 'images/southern natioanl park.jpg' %}" alt="Southern National Park">
+                        <h3>Southern National Park</h3>
+                        <p>The Southern National Park is a national park in South Sudan. It was established in 1939. This site has an area of 23,000 km².</p>
+                    </article>
+                </section>
+
+                <section class="attractions">
+                    <h3>Mountains/Hills</h3>
+                    <div class="attractions-container">
+                        <article>
+                            <img src="{% static 'images/Imatong mountain.jpeg' %}" alt="Imatong Mountain">
+                            <h3>Imatong Mountain</h3>
+                            <p>The Imatong Mountains are mainly located in Eastern Equatoria in southeastern South Sudan, and extend into the Northern Region of Uganda. Mount Kinyeti is the highest mountain of the range at 3,187 metres, and the highest point of South Sudan.</p>
+                        </article>
+                        <article>
+                            <img src="{% static 'images/Boma mountain.jpeg' %}" alt="Boma Mountain">
+                            <h3>Boma Mountain</h3>
+                            <p>The Boma Mountain is located in southeastern South Sudan, near the border with Ethiopia. It is in the Boma National Park.</p>
+                        </article>
+                        <article>
+                            <img src="{% static 'images/Jebel Kujur.jpeg' %}" alt="Jebel Kujur">
+                            <h3>Jebel Kujur</h3>
+                            <p>Jebel Kujur is home to a few families who cultivate the land on the mountainside and also work as stone crushers manually.</p>
+                        </article>
+                    </div>
+                </section>
+            </section>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Wonderful South Sudan. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

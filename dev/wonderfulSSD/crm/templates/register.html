@@ -1,0 +1,209 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Wonderful South Sudan</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'styles/authentication_styles.css' %}">
+    <style>
+        #form-title {
+            text-align: center;
+            color: #004d00 !important;
+        }
+        .registration-form {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: #004d00;
+            color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .registration-form h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            color: #fff;
+        }
+
+        .registration-form .form-group {
+            margin-bottom: 15px;
+        }
+
+        .registration-form label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #fff;
+        }
+
+        .registration-form .input-group {
+            margin-bottom: 15px;
+        }
+
+        .registration-form .input-group .input-group-prepend .input-group-text {
+            background: #f7ba5b;
+            border: none;
+            color: #fff;
+        }
+
+        .registration-form .input-group input {
+            border-radius: 0;
+            border-left: none;
+        }
+
+        .registration-form input[type="text"],
+        .registration-form input[type="email"],
+        .registration-form input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        .registration-form input[type="text"]:focus,
+        .registration-form input[type="email"]:focus,
+        .registration-form input[type="password"]:focus {
+            border-color: #0056b3;
+            outline: none;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 4px;
+            background-color: #f7ba5b; /* Match this with the icon background color */
+            color: #004d00 !important;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-button:hover {
+            background-color: #e6a23a; /* Darker shade for hover effect */
+        }
+
+        .submit-button:focus {
+            outline: none;
+        }
+
+        .invalid-feedback {
+            display: block;
+            color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h2 id="form-title">Register</h2>
+                <form method="POST" autocomplete="off" class="registration-form">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input type="text" name="username" id="id_username" class="form-control" placeholder="Username" value="{{ registerform.username.value }}">
+                        </div>
+                        {% if registerform.username.errors %}
+                            <div class="invalid-feedback">
+                                {% for error in registerform.username.errors %}
+                                    <div>{{ error }}</div>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input type="text" name="first_name" id="id_first_name" class="form-control" placeholder="First Name" value="{{ registerform.first_name.value }}">
+                        </div>
+                        {% if registerform.first_name.errors %}
+                            <div class="invalid-feedback">
+                                {% for error in registerform.first_name.errors %}
+                                    <div>{{ error }}</div>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input type="text" name="last_name" id="id_last_name" class="form-control" placeholder="Last Name" value="{{ registerform.last_name.value }}">
+                        </div>
+                        {% if registerform.last_name.errors %}
+                            <div class="invalid-feedback">
+                                {% for error in registerform.last_name.errors %}
+                                    <div>{{ error }}</div>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                            </div>
+                            <input type="email" name="email" id="id_email" class="form-control" placeholder="Email" value="{{ registerform.email.value }}">
+                        </div>
+                        {% if registerform.email.errors %}
+                            <div class="invalid-feedback">
+                                {% for error in registerform.email.errors %}
+                                    <div>{{ error }}</div>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                            </div>
+                            <input type="password" name="password1" id="id_password1" class="form-control" placeholder="Password">
+                        </div>
+                        {% if registerform.password1.errors %}
+                            <div class="invalid-feedback">
+                                {% for error in registerform.password1.errors %}
+                                    <div>{{ error }}</div>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                            </div>
+                            <input type="password" name="password2" id="id_password2" class="form-control" placeholder="Confirm Password">
+                        </div>
+                        {% if registerform.password2.errors %}
+                            <div class="invalid-feedback">
+                                {% for error in registerform.password2.errors %}
+                                    <div>{{ error }}</div>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <input type="submit" value="Register" class="submit-button"/>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
